@@ -110,7 +110,6 @@ struct HfCandidateSelectorDstarToD0Pi {
   // using TracksSel = soa::Join<aod::Tracks, aod::TracksPidPi, aod::TracksPidKa>;
   using HfFullDstarCandidate = soa::Join<aod::HfD0FromDstar, aod::HfCandDstar>;
 
-
   AxisSpec axisBdtScore{100, 0.f, 1.f};
   AxisSpec axisSelStatus{2, -0.5f, 1.5f};
   HistogramRegistry registry{"registry"};
@@ -143,13 +142,12 @@ struct HfCandidateSelectorDstarToD0Pi {
         registry.get<TH2>(HIST("QA/hSelections"))->GetXaxis()->SetBinLabel(iBin + 1, labels[iBin].data());
       }
 
-      if(applyMl) {
+      if (applyMl) {
         registry.add("QA/hBdtScore1VsStatus", ";BDT score", {HistType::kTH1F, {axisBdtScore}});
         registry.add("QA/hBdtScore2VsStatus", ";BDT score", {HistType::kTH1F, {axisBdtScore}});
         registry.add("QA/hBdtScore3VsStatus", ";BDT score", {HistType::kTH1F, {axisBdtScore}});
       }
     }
-
 
     if (applyMl) {
       hfMlResponse.configure(binsPtMl, cutsMl, cutDirMl, nClassesMl);
@@ -356,7 +354,7 @@ struct HfCandidateSelectorDstarToD0Pi {
     for (const auto& candDstar : rowsDstarCand) {
       // final selection flag: false - rejected, true - accepted
       bool statusDstar = false, statusD0Flag = false, statusTopol = false, statusCand = false, statusPID = false;
-      
+
       outputMlDstarToD0Pi.clear();
       auto ptCand = candDstar.pt();
 
@@ -462,7 +460,7 @@ struct HfCandidateSelectorDstarToD0Pi {
 
         std::vector<float> inputFeatures = hfMlResponse.getInputFeatures(candDstar, prong0, prong1, prongPi);
         isSelectedMlDstar = hfMlResponse.isSelectedMl(inputFeatures, ptCand, outputMlDstarToD0Pi);
-        
+
         hfMlDstarCandidate(outputMlDstarToD0Pi);
         if (activateQA) {
           registry.fill(HIST("QA/hBdtScore1VsStatus"), outputMlDstarToD0Pi[0]);
