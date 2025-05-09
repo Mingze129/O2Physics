@@ -274,7 +274,7 @@ DECLARE_TABLES_2P(D0, "D0", d0, 2);
 DECLARE_TABLES_3P(Lc, "LC", lc, 3);
 DECLARE_TABLES_3P(Dplus, "DP", dplus, 4);
 DECLARE_TABLES_3P(Bplus, "BP", bplus, 5);
-DECLARE_TABLES_3P(Dstar,"DST", dstar, 6);
+DECLARE_TABLES_3P(Dstar, "DST", dstar, 6);
 
 // ================
 // Additional species-specific candidate tables
@@ -303,15 +303,15 @@ DECLARE_SOA_COLUMN(PtProng0, ptProng0, float);                                  
 DECLARE_SOA_COLUMN(PtProng1, ptProng1, float);                                     //! transverse momentum of prong 1
 DECLARE_SOA_COLUMN(PtProng2, ptProng2, float);                                     //! transverse momentum of prong 2
 DECLARE_SOA_COLUMN(RSecondaryVertex, rSecondaryVertex, float);                     //! distance of the secondary vertex from the z axis
-//D*± → D0(bar) π±
-DECLARE_SOA_COLUMN(MassD0, massD0, float);                                         //! invariant mass of D0
-DECLARE_SOA_COLUMN(CpaD0, cpaD0, float);                                           //! cosine of pointing angle of D0
-DECLARE_SOA_COLUMN(CpaXYD0, cpaXYD0, float);                                       //! cosine of pointing angle in the transverse plane of D0
-DECLARE_SOA_COLUMN(DecayLengthD0, decayLengthD0, float);                           //! decay length of D0
-DECLARE_SOA_COLUMN(DecayLengthXYD0, decayLengthXYD0, float);                       //! decay length in the transverse plane of D0
-DECLARE_SOA_COLUMN(DecayLengthNormalisedD0, decayLengthNormalisedD0, float);       //! decay length of D0 divided by its uncertainty
-DECLARE_SOA_COLUMN(DecayLengthXYNormalisedD0, decayLengthXYNormalisedD0, float);   //! decay length in the transverse plane of D0 divided by its uncertainty
-DECLARE_SOA_COLUMN(NormalisedImpParamSoftPi, normalisedImpParamSoftPi, float);     //! impact parameter of soft pion divided by its uncertainty
+// D*± → D0(bar) π±
+DECLARE_SOA_COLUMN(MassD0, massD0, float);                                       //! invariant mass of D0
+DECLARE_SOA_COLUMN(CpaD0, cpaD0, float);                                         //! cosine of pointing angle of D0
+DECLARE_SOA_COLUMN(CpaXYD0, cpaXYD0, float);                                     //! cosine of pointing angle in the transverse plane of D0
+DECLARE_SOA_COLUMN(DecayLengthD0, decayLengthD0, float);                         //! decay length of D0
+DECLARE_SOA_COLUMN(DecayLengthXYD0, decayLengthXYD0, float);                     //! decay length in the transverse plane of D0
+DECLARE_SOA_COLUMN(DecayLengthNormalisedD0, decayLengthNormalisedD0, float);     //! decay length of D0 divided by its uncertainty
+DECLARE_SOA_COLUMN(DecayLengthXYNormalisedD0, decayLengthXYNormalisedD0, float); //! decay length in the transverse plane of D0 divided by its uncertainty
+DECLARE_SOA_COLUMN(NormalisedImpParamSoftPi, normalisedImpParamSoftPi, float);   //! impact parameter of soft pion divided by its uncertainty
 // TOF
 DECLARE_SOA_COLUMN(NSigTofKa0, nSigTofKa0, float);
 DECLARE_SOA_COLUMN(NSigTofKa1, nSigTofKa1, float);
